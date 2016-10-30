@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../数据/angular/angular-1.5.8/angular.min.js"></script>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: #dd1144;
+        }
+    </style>
+
+
+</head>
+<body ng-app="myApp">
+<div ng-desc></div>
+<script>
+    var myapp = angular.module('myApp',[]);
+   /* myapp.directive('ngDesc', function () {
+        return function (scope, element, attrs) {
+            element.bind("mouseenter", function () {
+                element.css('backgroundColor','white');
+            });
+            element.bind('mouseleave', function () {
+                element.css('backgroundColor','#dd1144');
+            });
+        }
+    });*/
+    myapp.directive('ngDesc', function () {
+        return function (scope, element, attrs) {
+            element.bind("mouseenter", function () {
+                element.css('backgroundColor','white');
+            });
+            element.bind('mouseleave', function () {
+                element.css('backgroundColor','#dd1144');
+            });
+        }
+    });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../数据/angular/angular-1.5.8/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="me">
+<hello></hello>
+    <div hello></div>
+</div>
+<div ng-app="ta">
+    <hell></hell>
+    <div hell></div>
+</div>
+<script>
+    var myApp = angular.module('me',[]);
+    myApp.directive('hello', function () {
+        return {
+            restrict: 'AE',
+            template:'<h1>hello world</h1>',
+            replace: true
+
+        }
+    });
+
+    var app = angular.module('ta',[]);
+    myApp.directive('hell', function () {
+        return {
+            restrict: 'AE',
+            template:'<div>' +
+            '<h1>this</h1>'+
+            '<h2>that</h2>'+
+            '</div>',
+            replace: true
+
+        }
+    });
+
+</script>
+</body>
+</html>
