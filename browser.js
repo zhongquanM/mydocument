@@ -1,3 +1,5 @@
+// 只是分辨呈现引擎，它与真正的浏览器不一样，Safari 和 Chrome都是用的webkit
+
 var client = function(){
   var engine = {
     // 呈现引擎
