@@ -10,7 +10,10 @@ var client = function(){
     ver: null,
   };
   // 第一个识别的是Opera，因为它的用户代理字符串可能完全模仿其他浏览器，不相信Opera！！！
-  if(client.engine)
+  if(window.opera){
+    engine.ver = window.opera.version();
+  
+  }
   
   
   
