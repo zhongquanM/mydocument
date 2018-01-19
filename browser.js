@@ -1,6 +1,6 @@
-// 只是分辨呈现引擎，它与真正的浏览器不一样，Safari 和 Chrome都是用的webkit
 
 var client = function(){
+  // 只是分辨呈现引擎，它与真正的浏览器不一样，Safari 和 Chrome都是用的webkit
   var engine = {
     // 呈现引擎
     ie: 0,
@@ -11,6 +11,18 @@ var client = function(){
     // 具体的版本号
     ver: null,
   };
+//   浏览器
+  var brower = {
+    ie: 0,
+    firefox: 0,
+    safari: 0,
+    konq: 0,
+    opera: 0,
+    chrome: 0,
+  // 具体的版本
+    ver: null,
+  
+  }
 //   第一个识别的是Opera，因为它的用户代理字符串可能完全模仿其他浏览器，不相信Opera！！！
   var ua= navigator.userAgent;
   if(window.opera){
