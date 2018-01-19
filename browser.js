@@ -27,9 +27,17 @@ var client = function(){
     engine.ver = RegExp("$1");
     engine.khtml = parseFloat(engine.ver);
   }
-// 最后是检测Gecko 它的版本号是出现在字符串'rv:'的后面；
-  else if(/rv:([])/)
+// 第四个是检测Gecko(Firefox) 它的版本号是出现在字符串'rv:'的后面；
+  else if(/rv:([^\)]+\) Gecko\/\d{8}/.test(ua)){
+    engine.ver = RegExp("$1");
+    engine.gecko = paresFloat(engine.ver);
   
+  }
+//   最后检测IE，IE的版本号位于字符串 "MSIE" 的后面、一个分号的前面
+  else if (/MSIE ([^;]+)/.test(ua)){
+    engine.ver = RegExp["$1"];
+    engine.ie = parseFloat(engine.ver);
+  };
   
   
   
