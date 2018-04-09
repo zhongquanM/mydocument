@@ -65,7 +65,7 @@ html,body{
 html{
   background-color: #f3f3f3;
 }
-
+// 清除浮动
 .clear:after{
   content: '';
   display: block;
