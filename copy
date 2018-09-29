@@ -1,0 +1,22 @@
+/*
+  * pc m 点击复制功能
+  *
+  *
+*/
+var html = '<div id="copy-wxh">点击</div><input type=\'text\' id=\'inputTexts\' style=\'opacity: 0;position: absolute;background-color:#FFFFFF;color:#000;border:none;height:1px;\' value="aaa" readonly=readonly />' +
+$('body').html(html)
+         $('#copy-wxh').click(function () {
+                            var inputText = document.getElementById('inputTexts');
+                            var currentFocus = document.activeElement;inputText.focus();
+                            inputText.setSelectionRange(0, inputText.value.length);
+                            if(document.execCommand('copy', true)){
+                                alert("复制成功!");
+
+                            }else {
+                                alert("您的浏览器不支持此功能，请手动选中文字复制");
+                            }
+                            currentFocus.focus();
+                            var selection = window.getSelection();
+                            selection.removeAllRanges();
+
+                        })
