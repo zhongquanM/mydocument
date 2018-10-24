@@ -1,0 +1,37 @@
+!function (e, b) {
+  var f = 0, h = b.designWidth, n = b.designHeight || 0, g = b.designFontSize || 100, k = b.callback || null,
+    i = document.documentElement, c = document.body, a, d, m, l;
+
+  function j() {
+    var o = e.innerWidth > 1920 ? 1920 : e.innerWidth;
+    var p = n !== 0 ? Math.min(o / h, e.innerHeight / n) : o / h;
+    return parseInt(p * 10000 * g) / 10000
+  }
+
+  !function () {
+    a = i.getBoundingClientRect().width;
+    l = l ? l : arguments.callee;
+    if (a !== e.innerWidth && f < 20) {
+      e.setTimeout(function () {
+        f++;
+        l()
+      }, 0)
+    } else {
+      d = j();
+      if (d + "px" !== getComputedStyle(i)["font-size"]) {
+        i.style.fontSize = d + "px";
+        return k && k(d)
+      }
+    }
+  }();
+  e.addEventListener("onorientationchange" in window ? "orientationchange" : "resize", function () {
+    clearTimeout(m);
+    m = setTimeout(function () {
+      l()
+    }, 200)
+  }, false)
+}(window, {
+  designWidth: 1920, designFontSize: 100, callback: function (a) {
+    console.timeEnd("test")
+  }
+});
