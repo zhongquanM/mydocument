@@ -26,7 +26,7 @@
 
 
 
-7、通过“set password=password('root')”修改密码。此处将root密码设置为root
+7、通过 ALTER USER USER() IDENTIFIED BY 'mzq1993'; 修改密码。此处将root密码设置为root
 
 
 
