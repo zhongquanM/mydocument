@@ -1,0 +1,33 @@
+ 电脑原先安装过mysql，卸载不干净，重装默认以前的用户名和密码，然鹅 我不知道用户名和密码
+
+以下方法可以解决
+
+1、运行 —— cmd ,打开面板，切换到mysql安装的bin目录下
+
+
+
+2、在命令行输入 mysql -u root -p 登录 mysql，可以随意输入一个密码，返回”Can't connect to MySQL server on localhost (10061)”错误
+
+
+
+3、将mysql加入到Windows的服务中。切换到mysql安装目录下的bin文件夹，命令行运行"mysqld --install"
+
+
+
+4、初始化mysql数据库，输入“mysqld --initialize --user=root --console”。最后面的 root@localhost后的文字为初始化后的root 密码，一定要记住
+
+
+
+5、此时使用“net start mysql”成功启动msyql
+
+
+
+6、用生成的密码登录mysql
+
+
+
+7、通过“set password=password('root')”修改密码。此处将root密码设置为root
+
+
+
+mysql用户名、密码修改成功，均为 root
